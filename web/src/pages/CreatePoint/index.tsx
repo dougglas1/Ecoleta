@@ -73,7 +73,7 @@ const CreatePoint = () => {
     }
     
     axios.get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`).then(response => {
-      const cityNames = response.data.map(uf => uf.nome);
+      const cityNames = response.data.map(city => city.nome);
 
       setCities(cityNames);
     });
